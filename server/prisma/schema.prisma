@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://postgres:postgres@localhost:5432/book_rating_website?schema=public"
 }
 
 model Book {
@@ -12,9 +12,10 @@ model Book {
   title         String
   description   String?
   publishedAt   DateTime?
-  isbn          String?   @unique
+  isbn          BigInt       @unique
   pageCount     Int?
   coverImageUrl String?
+  rating        Decimal
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
