@@ -1,0 +1,4 @@
+.navbar {
+	background-color: var(--mat-sys-on-primary);
+	justify-content: space-between;
+}
